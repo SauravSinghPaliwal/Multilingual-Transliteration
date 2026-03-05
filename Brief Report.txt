@@ -1,0 +1,46 @@
+Brief Report
+
+Challenges Faced and How They Were Solved
+
+1. Limited GPU Time
+The GPU available in Google Colab was limited to about 1 hour 30 minutes, which made it difficult to run long training jobs.
+
+Solution:
+To finish training within the available time, the training was limited to 4500 steps instead of full epochs. This helped complete the training within the time limit while still allowing the model to learn transliteration patterns.
+
+2. Python Library Version Mismatch
+During development, there were issues with library compatibility, especially between transformers, accelerate, and other dependencies. This caused runtime errors during training and inference.
+
+Solution:
+The problem was solved by pinning compatible versions of libraries and reinstalling the required packages in Colab to ensure they worked together correctly.
+
+3. GPU Memory Constraints
+Training transformer models requires a significant amount of GPU memory.
+
+Solution:
+To manage memory usage:
+- Source and target sequence lengths were limited to 32 tokens
+- Mixed precision (fp16) training was enabled
+- The mT5-small model was used instead of larger variants
+
+These changes allowed the training to run successfully on a Colab T4 GPU.
+
+4. Slow Inference with the Original Model
+The trained PyTorch model worked correctly but inference speed was relatively slow and the model size was large.
+
+Solution:
+The model was converted to CTranslate2 format, which reduced the model size and improved inference speed, making it more suitable for deployment.
+
+Design Decisions
+
+Choice of Model
+The mT5-small model was selected because it supports multilingual sequence-to-sequence tasks and is lightweight enough to train within the limitations of Google Colab.
+
+Language Tokens
+Special language tokens were added to guide the model during training.
+
+Example:
+<2hin> saurav
+
+This helps the model understand which language script should be generated.
+
