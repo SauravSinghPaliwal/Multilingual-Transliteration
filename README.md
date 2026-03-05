@@ -1,5 +1,8 @@
 # Multilingual Transliteration Model (Asm–Hin–Mar)
 
+# Demo link
+https://huggingface.co/spaces/sauravsinghpaliwal/Multilingual_Transliteration_Model
+
 This project implements a **multilingual transliteration system** that converts **romanized text into native Indic scripts**.
 
 Supported languages:
