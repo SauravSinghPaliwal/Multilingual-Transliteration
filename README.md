@@ -1,5 +1,8 @@
 # Multilingual Transliteration Model (Asm–Hin–Mar)
 
+# Colab link
+https://colab.research.google.com/drive/1M5BTb6jLSszZZgxLC6rdoJZfZH_6tpNT?usp=sharing
+
 # Demo link
 https://huggingface.co/spaces/sauravsinghpaliwal/Multilingual_Transliteration_Model
 
